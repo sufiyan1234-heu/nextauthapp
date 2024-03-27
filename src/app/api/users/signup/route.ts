@@ -23,6 +23,7 @@ export async function POST(request: NextRequest) {
     // create user
     const salt = await bcryptjs.genSalt(10);
     const hashedPassword = await bcryptjs.hash(password, salt);
+    console.log(hashedPassword);
 
     const newUser = new User({
       username,

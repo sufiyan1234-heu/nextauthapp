@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
     // validation
     console.log(reqBody);
     //check if username and password already exists
-    const user = await User.findOne({ email: email, password: password });
+    const user = await User.findOne({ email: email });
     if (!user) {
       return NextResponse.json({ message: "No User Found", status: 400 });
     }
